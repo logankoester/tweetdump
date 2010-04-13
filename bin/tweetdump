@@ -1,0 +1,40 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.dirname(__FILE__) + '/../lib'
+require 'rubygems'
+require 'optiflag'
+require 'tweetdump'
+
+module TweetDumpOptions extend OptiFlagSet
+   flag "user" do
+     alternate_forms "u", "screen_name"
+     description "Your Twitter screen name"
+   end
+   flag "password" do
+     alternate_forms "p"
+     description "Your Twitter password"
+   end
+   flag "api" do
+     description "Which Twitter API to use (streaming or search)"
+   end
+   flag "keyword" do
+     alternate_forms "k"
+     description "Your search query"
+   end
+   optional_flag "log" do
+     description "A file to log output to, defaults to /dev/null"
+   end
+   optional_flag "limit" do
+     description "How many tweets to fetch, defaults to infinity"
+   end
+   usage_flag "h","help","?"
+   and_process!
+end
+
+t = TweetDump.new
+t.screen_name = ARGV.flags.screen_name
+t.password = ARGV.flags.password
+t.keyword = ARGV.flags.keyword
+t.logfile = ARGV.flags.log || '/dev/null'
+t.api = ARGV.flags.api
+t.limit = ARGV.flags.limit || 1
+t.run!
