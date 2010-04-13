@@ -1,6 +1,11 @@
 = tweetdump
 
-Created because I frequently find myself wanting to compare real-world APIs.
+Initially I created this because I wanted to compare the Streaming and Search APIs.
+It turns out that completely by accident it can also do the neat trick of connecting indefinitely to either API,
+and feeding fresh tweets to whatever program you pipe the output to.
+
+% tweetdump -h # Usage instructions
+
 
 == Note on Patches/Pull Requests
  
