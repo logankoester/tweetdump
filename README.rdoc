@@ -1,6 +1,6 @@
 = tweetdump
 
-Description goes here.
+Created because I frequently find myself wanting to compare real-world APIs.
 
 == Note on Patches/Pull Requests
  

@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "tweetdump"
     gem.summary = %Q{Simple CLI program to dump X number of tweets as raw JSON from Twitter}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{Created because I frequently find myself wanting to compare real-world API responses from Twitter's various APIs.}
     gem.email = "logan@logankoester.com"
     gem.homepage = "http://github.com/logankoester/tweetdump"
     gem.authors = ["Logan Koester"]
