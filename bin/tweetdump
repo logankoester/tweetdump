@@ -5,8 +5,8 @@ require 'optiflag'
 require 'tweetdump'
 
 module TweetDumpOptions extend OptiFlagSet
-   flag "user" do
-     alternate_forms "u", "screen_name"
+   flag "screen_name" do
+     alternate_forms "u", "user"
      description "Your Twitter screen name"
    end
    flag "password" do
