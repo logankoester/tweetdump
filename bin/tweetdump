@@ -20,7 +20,8 @@ module TweetDumpOptions extend OptiFlagSet
      alternate_forms "k"
      description "Your search query"
    end
-   optional_flag "log" do
+   optional_flag "logfile" do
+     alternate_forms "log"
      description "A file to log output to, defaults to /dev/null"
    end
    optional_flag "limit" do
@@ -34,7 +35,7 @@ t = TweetDump.new
 t.screen_name = ARGV.flags.screen_name
 t.password = ARGV.flags.password
 t.keyword = ARGV.flags.keyword
-t.logfile = ARGV.flags.log || '/dev/null'
 t.api = ARGV.flags.api
-t.limit = ARGV.flags.limit || 1
+t.logfile = ARGV.flags.logfile if ARGV.flags.logfile?
+t.limit = ARGV.flags.limit.to_i if ARGV.flags.limit?
 t.run!

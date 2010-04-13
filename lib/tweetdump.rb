@@ -48,7 +48,7 @@ private
           tweet = Hashie::Mash.new(JSON.parse(status))          
           logger.info "Fetched tweet ##{tweet.id} via Streaming API"
           logger.info "Job Status: #{@count}/#{@limit}"
-          if @count >= @limit
+          if @limit and @count >= @limit
             logger.info "Limit reached (#{@count} out of #{@limit})"
             logger.info "Disconnecting from Twitter"
             return
@@ -87,7 +87,7 @@ private
       puts JSON.dump(tweet)
       logger.info "Fetched tweet ##{tweet.id} via Search API"
       logger.info "Job Status: #{@count}/#{@limit}"
-      if @count >= @limit
+      if @limit and @count >= @limit
         logger.info "Limit reached (#{@count} out of #{@limit})"
         return
       else
