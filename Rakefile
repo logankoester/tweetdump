@@ -22,7 +22,7 @@ begin
     gem.add_dependency "eventmachine"
     gem.add_dependency "hashie"
     gem.add_dependency "twitter"
-    gem.executables = ['bin/tweetdump']
+    gem.executables = ['tweetdump']
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
